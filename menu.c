@@ -7,12 +7,14 @@
 void menu(int* numDigitos, int* nivel, int* maxNumber, char* repete) {
     int valido = VALIDO;
 	do {
-		printf("Digite o nivel desejado\n");
-		printf("1 - Fácil \n");
-		printf("2 - Médio \n");
-		printf("3 - Difícil \n");
-		printf("4 - Teste \n");
-		scanf("%d", nivel);
+        if(*nivel == 0) {
+            printf("Digite o nivel desejado\n");
+            printf("1 - Fácil \n");
+            printf("2 - Médio \n");
+            printf("3 - Difícil \n");
+            printf("4 - Teste \n");
+            scanf("%d", nivel);
+        }
 		switch(*nivel) {
 			case 1:
 			    *numDigitos = 3;

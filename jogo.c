@@ -48,29 +48,28 @@ int validaNumero(int nivel, int num) {
     return VALIDO;
 }
 
-int tentativaSenha(int nivel, int numDigitos, int* senha, int* sairJogo) {
+int tentativaSenha(int nivel, int numDigitos, int* senha, int* sairDoJogo) {
     int tentativa[numDigitos];
     int num = 0, posicaoCerta = 0, posicaoErrada = 0;
     int tentativaInvalida = VALIDO;
-    int sairDoJogo = VALIDO;
     do {
         tentativaInvalida = VALIDO;
         for(int j = 0; j < numDigitos; j++) {
-            num = ((int) getche()) - 48;
+            num = (int) getche() - 48;
             if(validaNumero(nivel, num) == 0) tentativaInvalida = INVALIDO;
-            if(num != 0) sairDoJogo = INVALIDO;
+            if(num != 67 && num != 35) *sairDoJogo = INVALIDO;
             tentativa[j] = num;
         }
-        if(tentativaInvalida == INVALIDO) {
+        if(tentativaInvalida == INVALIDO && *sairDoJogo == INVALIDO) {
             printf(" Tentativa Inválida\n");
-            printf("   ");
+            printf("    ");
         }
-    }while(tentativaInvalida != VALIDO);
+    }while(tentativaInvalida != VALIDO && *sairDoJogo == INVALIDO);
 
    /* for(int i = 0; i < numDigitos; i++) {
         printf("%d", tentativa[i]);
     }*/
-    if(sairDoJogo == INVALIDO) {
+    if(*sairDoJogo == INVALIDO) {
         computaTentativa(&posicaoCerta, &posicaoErrada, tentativa, senha, numDigitos);
         printf(" %d %d", posicaoCerta, posicaoErrada);
     }
@@ -88,8 +87,8 @@ void geraCabecalho(int nivel, int* senha){
             printf("Algarismos de 0 a 4 que não se repetem!!!");
             break;
         case MEDIO:
-            printf("Nivel Escolhido: Médio");
-            printf("Numero de Digitos: 4");
+            printf("Nivel Escolhido: Médio\n");
+            printf("Numero de Digitos: 4\n");
             printf("Algarismos de 0 a 5 que podem repetir!!!");
             break;
         case DIFICIL:
@@ -110,15 +109,32 @@ void geraCabecalho(int nivel, int* senha){
 
 }
 
-void geraJogo(int nivel, int numDigitos, int senha) {
-    int sairDoJogo = INVALIDO, tentativa = 0, ganhou = 0;
+int geraJogo(int nivel, int numDigitos, int* senha, int tentativas) {
+    int sairDoJogo = VALIDO, tentativa = 1, ganhou = 0, jogarNovamente = 0;
     geraCabecalho(nivel, senha);
     printf("\n");
-    printf("Descubra a senha abaixo. Para sair digite 0 para todas as posições\n");
-    while(sairDoJogo == INVALIDO && ganhou != VALIDO) {
+    printf("Descubra a senha abaixo. Para sair digite 'S' para todas as posições\n");
+    do {
         printf("%d - ", tentativa);
         ganhou = tentativaSenha(nivel, numDigitos, senha, &sairDoJogo);
         printf("\n");
         tentativa++;
+    } while(sairDoJogo == 0 && ganhou == 0);
+
+    if(ganhou == VALIDO) {
+        printf("Parabéns!!! Você venceu com %d tentativas. A senha é: ", (tentativa - 1));
+        for(int i = 0; i < 4; i++) {
+            printf("%d", senha[i]);
+        }
+        do{
+            printf("\nDigite 0 Para Sair ou 1 Para Jogar Novamente: ");
+            scanf("%d", &jogarNovamente);
+            if(jogarNovamente != 0 && jogarNovamente != 1) printf("Opção Inválida. Tente novamente.");
+        }while(jogarNovamente  != 0 && jogarNovamente != 1);
+        return jogarNovamente;
+    }
+    else {
+        printf("Obrigado por jogar. Volte sempre!!!");
+        return 0;
     }
 }

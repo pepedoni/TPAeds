@@ -6,5 +6,5 @@ void computaTentativa(int* posicaoCerta, int* posicaoErrada, int* tentativa, int
 int validaNumero(int nivel, int num);
 int tentativaSenha(int nivel, int numDigitos, int* senha, int* sairJogo);
 void geraCabecalho(int nivel, int* senha);
-void geraJogo(int nivel, int numDigitos, int senha);
+int geraJogo(int nivel, int numDigitos, int* senha, int tentativas);
 #endif // JOGO_H_INCLUDED
