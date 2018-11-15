@@ -18,7 +18,7 @@
 	"menu.h"
 	"jogo.h"
 
-1542294438 c:\users\pedro\documents\trabalho\tpaeds\senha.h
+1542301967 c:\users\pedro\documents\trabalho\tpaeds\senha.h
 	<stdio.h>
 	<stdlib.h>
 
@@ -30,7 +30,7 @@
 
 1542293702 source:c:\users\pedro\documents\trabalho\tpaeds\senha.h
 
-1542298913 source:c:\users\pedro\documents\trabalho\tpaeds\jogo.c
+1542301276 source:c:\users\pedro\documents\trabalho\tpaeds\jogo.c
 	<stdio.h>
 	<stdlib.h>
 	"jogo.h"
@@ -45,6 +45,6 @@
 	<stdlib.h>
 	<time.h>
 
-1542300224 c:\users\pedro\documents\trabalho\tpaeds\jogo.h
+1542302434 c:\users\pedro\documents\trabalho\tpaeds\jogo.h
 	<stdio.h>
 
