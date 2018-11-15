@@ -1,13 +1,9 @@
 #ifndef JOGO_H_INCLUDED
 #define JOGO_H_INCLUDED
 
+#include <stdio.h>
 
-geraJogo() {
-
-}
-
-geraCabecalho() {
-    printf()
-}
+void geraJogo(int nivel, int numDigitos, int senha);
+void geraCabecalho(int nivel, int* senha);
 
 #endif // JOGO_H_INCLUDED

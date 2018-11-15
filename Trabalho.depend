@@ -10,13 +10,33 @@
 1542290412 c:\users\pedro\documents\trabalho\menu.h
 	"senha.h"
 
-1542292559 source:c:\users\pedro\documents\trabalho\tpaeds\main.c
+1542295537 source:c:\users\pedro\documents\trabalho\tpaeds\main.c
 	<stdio.h>
 	<stdlib.h>
 	"senha.h"
 	"menu.h"
 
-1542291671 c:\users\pedro\documents\trabalho\tpaeds\senha.h
+1542294438 c:\users\pedro\documents\trabalho\tpaeds\senha.h
+	<stdio.h>
+	<stdlib.h>
 
-1542292668 c:\users\pedro\documents\trabalho\tpaeds\menu.h
+1542293874 c:\users\pedro\documents\trabalho\tpaeds\menu.h
+	<stdio.h>
+
+1542293874 source:c:\users\pedro\documents\trabalho\tpaeds\menu.h
+	<stdio.h>
+
+1542293702 source:c:\users\pedro\documents\trabalho\tpaeds\senha.h
+
+1542291432 source:c:\users\pedro\documents\trabalho\tpaeds\jogo.c
+
+1542294401 source:c:\users\pedro\documents\trabalho\tpaeds\menu.c
+	<stdio.h>
+	"menu.h"
+
+1542295757 source:c:\users\pedro\documents\trabalho\tpaeds\senha.c
+	"senha.h"
+	<stdlib.h>
+	<stdlib.h>
+	<time.h>
 

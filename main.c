@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "senha.h"
 #include "menu.h"
+#include "jogo.h"
 
 int main(int argc, char** argv) {
 
@@ -10,14 +11,10 @@ int main(int argc, char** argv) {
 	int numDigitos = 0;
 	char repete = 'S';
 
-	menu(&numDigitos, &maxNumber, &nivel, &repete);
+	menu(&numDigitos, &nivel, &maxNumber, &repete);
     geraSenha(numDigitos, maxNumber, senha, repete);
 
-	for(int i = 0; i < 4; i++) {
-		printf("%d", senha[i]);
-	}
-
-	//geraJogo(nivel, numDigitos, senha);
+	geraJogo(nivel, numDigitos, senha);
 
 	return 0;
 }

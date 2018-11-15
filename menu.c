@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include "menu.h"
+
 #define VALIDO   1
 #define INVALIDO 0
 
@@ -39,6 +42,4 @@ void menu(int* numDigitos, int* nivel, int* maxNumber, char* repete) {
 		}
 	}
 	while(valido != VALIDO);
-
 }
-#endif // MENU_H_INCLUDED
