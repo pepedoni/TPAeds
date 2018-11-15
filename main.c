@@ -16,14 +16,14 @@ int main(int argc, char** argv) {
 
 	// Recebe o nível como argumento
 	if(argc == 2) nivel       = atoi(argv[1]);
-	if(argc == 3) tentatinvas = atoi(argv[2]);
+	//if(argc == 3) tentatinvas = atoi(argv[3]);
 
 	do{
         system("cls");
         menu(&numDigitos, &nivel, &maxNumber, &repete);
 
         geraSenha(numDigitos, maxNumber, senha, repete);
-        jogarNovamente = geraJogo(nivel, numDigitos, senha, tentativas);
+        jogarNovamente = geraJogo(nivel, numDigitos, senha);
         nivel = 0;
 	}
     while(jogarNovamente != 0);

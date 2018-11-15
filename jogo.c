@@ -109,12 +109,13 @@ void geraCabecalho(int nivel, int* senha){
 
 }
 
-int geraJogo(int nivel, int numDigitos, int* senha, int tentativas) {
+int geraJogo(int nivel, int numDigitos, int* senha) {
     int sairDoJogo = VALIDO, tentativa = 1, ganhou = 0, jogarNovamente = 0;
     geraCabecalho(nivel, senha);
     printf("\n");
     printf("Descubra a senha abaixo. Para sair digite 'S' para todas as posições\n");
     do {
+        sairDoJogo = VALIDO;
         printf("%d - ", tentativa);
         ganhou = tentativaSenha(nivel, numDigitos, senha, &sairDoJogo);
         printf("\n");
