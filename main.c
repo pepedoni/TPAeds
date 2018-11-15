@@ -3,9 +3,6 @@
 #include "senha.h"
 #include "menu.h"
 
-void menu(int* numDigitos, int* nivel, int* maxNumber, int* repete);
-void geraSenha(int numDigitos, int maxNumber, int* senha, char repete);
-
 int main(int argc, char** argv) {
 
 	int nivel, maxNumber;

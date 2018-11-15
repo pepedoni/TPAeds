@@ -1,26 +1,30 @@
-void geraSenha(int nivel, int numDigitos, int* senha, char repete) {
-    srand(time(NULL));
+void geraSenha(int numDigitos, int maxNumber, int* senha, char repete) {
     int numRandom = 0;
-	for(int i = 0; i < nivel; i++) {
-        if(repete == 'S') {
-            senha[i] = rand() % numDigitos;
-        }
-        else {
-            senha[i] = geraNovoNumero(senha, i);
-        }
-	}
-
-}
-
-void geraNovoNumero(int* senha, int index) {
-    int numRandom, existe = 0;
-    numRandom = rand() % numDigitos;
-    for(int j = 0; j < i; j++) {
-        if(senha[j] == numRandom) {
-            existe = 1;
-            break;
+    // Gera senha com numeros que podem ser repetidos
+    if(repete == 'S') {
+        // Inicializa gerador de números aleatorios
+        srand(time(NULL));
+        for(int i = 0; i <= numDigitos; i++) {
+            // Gera número aleatório
+            numRandom = rand() % maxNumber;
+            // Coloca o numero aleatorio no vetor
+            senha[i] = numRandom;
         }
     }
-    if(existe == 1) return geraNovoNumero(senha, index);
-    else return numRandom;
+    else {
+        int i, j, status;
+        // Inicializa gerador de números aleatorios
+        srand(time(NULL));
+
+        for (i = 0; i < numDigitos; ++i) {
+           // Gera numero aleatorio enquanto ele for repetido
+           do {
+              senha[i] = rand() % maxNumber;
+              status = VALIDO;
+              for (j = 0; j < i; ++j)
+                 if (senha[i] == senha[j])
+                    status = INVALIDO;
+           } while (status == INVALIDO);
+        }
+    }
 }
