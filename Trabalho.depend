@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1542290076 source:c:\users\pedro\documents\trabalho\main.c
+	<stdio.h>
+	<stdlib.h>
+	"senha.h"
+	"menu.h"
+
+1542289003 c:\users\pedro\documents\trabalho\senha.h
+
+1542290412 c:\users\pedro\documents\trabalho\menu.h
+	"senha.h"
+
