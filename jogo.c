@@ -13,8 +13,8 @@ void geraCabecalho(int nivel, int* senha){
     system("cls");
     switch(nivel) {
         case FACIL:
-            printf("Nivel Escolhido: Fácil");
-            printf("Numero de Digitos: 3");
+            printf("Nivel Escolhido: Fácil\n");
+            printf("Numero de Digitos: 3\b");
             printf("Algarismos de 0 a 4 que não se repetem!!!");
             break;
         case MEDIO:
@@ -23,14 +23,14 @@ void geraCabecalho(int nivel, int* senha){
             printf("Algarismos de 0 a 5 que podem repetir!!!");
             break;
         case DIFICIL:
-            printf("Nivel Escolhido: Díficil");
-            printf("Numero de Digitos: 4");
+            printf("Nivel Escolhido: Díficil\n");
+            printf("Numero de Digitos: 4\n");
             printf("Algarismos de 0 a 9 que podem repetir!!!");
             break;
         case TESTE:
             printf("Nivel Escolhido: Teste\n");
-            printf("Numero de Digitos: 4");
-            printf("Algarismos de 0 a 9 que podem repetir!!!");
+            printf("Numero de Digitos: 4\n");
+            printf("Algarismos de 0 a 9 que podem repetir!!!\n");
             printf("Senha: ");
             for(int i = 0; i < 4; i++) {
                 printf("%d", senha[i]);
@@ -54,18 +54,37 @@ void tentativaSenha(nivel, numDigitos, senha, maxValue) {
         if(tentativaInvalida == INVALIDO) printf(" Tentativa Inválida\n");
     }while(tentativaInvalida != VALIDO);
 
-    for(int i = 0; i < numDigitos; i++) {
+   /* for(int i = 0; i < numDigitos; i++) {
         printf("%d", tentativa[i]);
-    }
+    }*/
 
-    computaTentativa(&posicaoCerta, &posicaoErrada, senha, tentativa, numDigitos);
+    computaTentativa(&posicaoCerta, &posicaoErrada, tentativa, senha, numDigitos);
+    printf(" %d %d", posicaoCerta, posicaoErrada);
 }
 
 void computaTentativa(int* posicaoCerta, int* posicaoErrada, int* tentativa, int* senha, int numDigitos) {
-    int posicoesUtilizadas[numDigitos];
+    int posicoesValidasTentativa[numDigitos];
+    int posicoesValidasSenha[numDigitos];
 
     for(int i = 0; i < numDigitos; i++) {
+        tentativa[i] == senha[i];
+        posicaoCerta++;
+        posicoesValidasTentativa[i] = INVALIDO;
+        posicoesValidasSenha[i]     = INVALIDO;
+    }
 
+    for(int j = 0; j < numDigitos; j++) {
+        if(posicoesValidasTentativa[j] == VALIDO) {
+            for(int k = 0; k < numDigitos; k++) {
+                if(posicoesValidasSenha[k] == VALIDO) {
+                    if(tentativa[j] == senha[k]) {
+                            posicoesValidasTentativa[j] = INVALIDO;
+                            posicoesValidasSenha[k]     = INVALIDO;
+                            posicaoErrada++;
+                    }
+                }
+            }
+        }
     }
 }
 
