@@ -13,7 +13,7 @@ void geraSenha(int numDigitos, int maxNumber, int* senha, char repete) {
         // Inicializa gerador de n�meros aleatorios
         srand(time(NULL));
         for(int i = 0; i <= numDigitos; i++) {
-            // Gera n�mero aleat�rio
+            // Gera Número Aleatório
             numRandom = rand() % maxNumber;
             // Coloca o numero aleatorio no vetor
             senha[i] = numRandom;

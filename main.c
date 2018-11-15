@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 #include "senha.h"
 #include "menu.h"
 #include "jogo.h"
 
 int main(int argc, char** argv) {
+
+    setlocale(LC_ALL, "Portuguese");
 
 	int nivel, maxNumber;
 	int senha[4];

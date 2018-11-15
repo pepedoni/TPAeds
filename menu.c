@@ -8,9 +8,9 @@ void menu(int* numDigitos, int* nivel, int* maxNumber, char* repete) {
     int valido = VALIDO;
 	do {
 		printf("Digite o nivel desejado\n");
-		printf("1 - Facil \n");
-		printf("2 - Medio \n");
-		printf("3 - Dificil \n");
+		printf("1 - Fácil \n");
+		printf("2 - Médio \n");
+		printf("3 - Difícil \n");
 		printf("4 - Teste \n");
 		scanf("%d", nivel);
 		switch(*nivel) {
